@@ -1,0 +1,66 @@
+﻿@model LoginViewModels
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="body">
+    <div class="veen">
+        <div class="login-btn splits">
+            <p>Zaten Kayıtlı Kullanıcı mısınız?</p>
+            <button class="active">Giriş Yap</button>
+        </div>
+        <div class="rgstr-btn splits">
+            <p>Hesabınız yok mu?</p>
+            <button>Kayıt Ol</button>
+        </div>
+        <div class="wrapper">
+            <form id="login" method="post" tabindex="500">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger small"></div> @*hata mesajlarını gösterir*@
+
+                <h3>Giriş Yap</h3>
+                <div class="uid">
+                    <label asp-for="Username" class="control-label"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"> </span>@*hata mesajlarını gösterir*@
+                    <label>Kullanıcı adı</label>
+                </div>
+                <div class="passwd">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" type="password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>@*hata mesajlarını gösterir*@
+                    <label>Şifre</label>
+                </div>
+
+
+                <div class="submit">
+                    <button class="dark">Giriş Yap</button>
+                </div>
+            </form>
+
+
+            <form id="register" method="post" tabindex="502">
+                <h3>Kayıt Ol</h3>
+           
+          
+                <div class="uid">
+                    <label asp-for="Username" class="control-label"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                    <label>Kullanıcı adı</label>
+                </div>
+                <div class="passwd">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <label>Şifre</label>
+                </div>
+
+                <div class="submit">
+                    <button class="dark">Kayıt Ol</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

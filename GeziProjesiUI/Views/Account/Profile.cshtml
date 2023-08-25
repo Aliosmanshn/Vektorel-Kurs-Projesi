@@ -1,0 +1,167 @@
+﻿@{
+    ViewData["Title"] = "Profile";
+
+}
+<hr class="mt-0 mb-4">
+
+
+
+<div class="container-xl px-4 mt-4">
+    <div class="row">
+        <div asp-validation-summary="All" class="text-danger small"> </div>
+        
+        <div class="col-xl-10">
+            <!-- Account details card-->
+            <div class="col-xl-5">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0" style="">
+                    <div class="card-header">Profil Resmi</div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                        <!-- Profile picture upload button-->
+                        <button class="btn btn-primary" type="button">Yeni resminizi yükleyin</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-6">
+                <div class="card-header">Hesap detayları</div>
+                <div class="card-body">
+                    <form>
+
+                                                                 <!-- İSİM SOY İŞLEMLERİ-->
+                        <form method="post" asp-action="ProgileIsimDegistir">
+                            <div class="form-group">
+                                <label class="form-lable small">İsim Soyisim</label>
+                                <div class="input-group mb-3">
+                                    <input name="adsoyad" type="text" class="form-control" placeholder="Adınız Soyadınız" value="@ViewData["Namesurname"]" />
+                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Kaydet</button>
+                                </div>
+                            </div>                           
+                        </form>
+
+                                                             <!--  ŞİFRE  İŞLEMLERİ-->
+                        <form method="post" asp-action="ProgileSifreDegistir">
+                            <div class="form-group">
+                                <label class="form-lable small">Yeni Şifre</label>
+                                <div class="input-group mb-0">
+                                    <input name="password" type="password" class="form-control" placeholder="Yeni Şifre Giriniz" />
+                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Kaydet</button>
+                                  
+                                </div>
+                                @if (ViewData["result"] != null && ViewData["result"] == "ŞifreDeğişti")
+                                {
+                                    <span class="text-success small">Değişiklikler Kaydedildi</span>
+                                }
+                            </div>                      
+
+                        </form>
+
+                        <!--  BIRTHDATE  İŞLEMLERİ-->
+                        <form method="post" asp-action="ProgileSifreDegistir">
+                            <div class="form-group">
+                                <label class="form-lable small">Doğum Günü</label>
+                                <div class="input-group mb-3">
+                                    <input name="bday" type="date" class="form-control" placeholder="Doğum Günü Giriniz" />
+                                </div>
+                            </div>
+                           
+                        </form>
+
+                        <!--  EMAIL  İŞLEMLERİ-->
+                        <form method="post" asp-action="ProgileSifreDegistir">
+                            <div class="form-group">
+                                <label class="form-lable small">E-Posta</label>
+                                <div class="input-group mb-3">
+                                    <input name="Eposta" type="email" class="form-control" placeholder="E-Posta Giriniz" />
+                                </div>
+                            </div>
+                        
+                        </form>
+
+                        <!--  COUNTRY  İŞLEMLERİ-->
+                        <form method="post" asp-action="ProgileSifreDegistir">
+                            <div class="form-group">
+                                <label class="form-lable small"> Ülke</label>
+                                <div class="input-group mb-3">
+                                    <input name="password" type="text" class="form-control" placeholder="Ülke Giriniz" />
+                                </div>
+                            </div>
+                          
+                        </form>
+
+                        <!--  CİTY  İŞLEMLERİ-->
+                        <form method="post" asp-action="ProgileSifreDegistir">
+                            <div class="form-group">
+                                <label class="form-lable small">Şehir </label>
+                                <div class="input-group mb-3">
+                                    <input name="password" type="text" class="form-control" placeholder="Şehir Giriniz" />
+                                </div>
+                            </div>
+                            
+                        </form>
+
+                        <!--  ADDRESS  İŞLEMLERİ-->
+                        <form method="post" asp-action="ProgileSifreDegistir">
+                            <div class="form-group">
+                                <label class="form-lable small"> Address</label>
+                                <div class="input-group mb-3">
+                                    <input name="password" type="text" class="form-control" placeholder="Address Giriniz" />
+                                </div>
+                            </div>
+                          
+                        </form>
+
+                        <!--  DİSTİRCK  İŞLEMLERİ-->
+                        <form method="post" asp-action="ProgileSifreDegistir">
+                            <div class="form-group">
+                                <label class="form-lable small">Semt </label>
+                                <div class="input-group mb-3">
+                                    <input name="password" type="text" class="form-control" placeholder="Semt Giriniz" />
+                                </div>
+                            </div>
+                          
+                        </form>
+
+                        <!--  TOWN  İŞLEMLERİ-->
+                        <form method="post" asp-action="ProgileSifreDegistir">
+                            <div class="form-group">
+                                <label class="form-lable small">İl  </label>
+                                <div class="input-group mb-3">
+                                    <input name="password" type="text" class="form-control" placeholder="İl Giriniz " />
+                                </div>
+                            </div>
+                        
+                        </form>
+
+                        <form method="post" asp-action="ProgileSifreDegistir">
+                            <div class="form-group">
+                                <div class="input-group mb-0">
+                                    <button class="btn btn-primary" type="button"> Kaydet</button>
+                                </div>
+                                @if (ViewData["result"] != null && ViewData["result"] == "ŞifreDeğişti")
+                                {
+                                    <span class="text-success small">Değişiklikler Kaydedildi</span>
+                                }
+                            </div>
+
+                        </form>
+                      
+                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @if (ViewData["result"] != null && ViewData["result"] == "ŞifreDeğişti")
+    {
+        <script>
+            toastr["success"]("Şifreniz Değiştirilmiştir", "Başarılı")
+        </script>
+    }  
+    }
